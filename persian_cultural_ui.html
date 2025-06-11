@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>از کابل تا کجا؟ - انجمن خردمندان</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+        :root {
+            --afghan-black: #000000;
+            --afghan-red: #D32011;
+            --afghan-green: #007A36;
+            --persian-gold: #D4AF37;
+            --warm-cream: #fdfbf7;
+            --dark-brown: #8b4513;
+            --mountain-blue: #2563eb;
+            --sunset-orange: #ea580c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazir', serif;
+            direction: rtl;
+            text-align: right;
+            background: linear-gradient(135deg, var(--warm-cream) 0%, #f5f1e8 100%);
+            color: #2d1810;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--afghan-black) 0%, var(--dark-brown) 50%, var(--mountain-blue) 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--afghan-black) 33.33%, var(--afghan-red) 33.33%, var(--afghan-red) 66.66%, var(--afghan-green) 66.66%);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .logo-symbol {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, var(--persian-gold) 0%, #f7e98e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Hero Section for the Book */
+        .hero-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 122, 54, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--dark-brown);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--mountain-blue);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .author-info {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-right: 4px solid var(--persian-gold);
+            margin-bottom: 2rem;
+        }
+
+        .author-info h3 {
+            color: var(--dark-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-style: italic;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--persian-gold) 0%, var(--sunset-orange) 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-brown);
+            border: 2px solid var(--dark-brown);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-brown);
+            color: white;
+        }
+
+        /* 3D Book Display */
+        .book-showcase {
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .book-3d {
+            width: 350px;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        .book-3d:hover {
+            transform: rotateY(-15deg) rotateX(5deg);
+        }
+
+        .book-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--persian-gold) 30%, var(--afghan-green) 70%, var(--mountain-blue) 100%);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,0,0,0.1) 0%, 
+                transparent 25%, 
+                rgba(212, 175, 55, 0.2) 50%, 
+                transparent 75%, 
+                rgba(0,0,0,0.1) 100%);
+        }
+
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--afghan-black) 33.33%, var(--afghan-red) 33.33%, var(--afghan-red) 66.66%, var(--afghan-green) 66.66%);
+            opacity: 0.8;
+        }
+
+        .book-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .book-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin: 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .book-icon {
+            font-size: 4rem;
+            margin: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .book-author {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Reading Preview Section */
+        .preview-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .preview-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .preview-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--persian-gold), var(--mountain-blue), var(--afghan-green));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .preview-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .preview-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 1rem;
+        }
+
+        .preview-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Actual Book Content Display */
+        .book-content {
+            background: var(--warm-cream);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid rgba(139, 105, 20, 0.2);
+            margin: 2rem 0;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        .book-content::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid rgba(139, 105, 20, 0.2);
+            border-radius: 10px;
+        }
+
+        .chapter-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--dark-brown);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .chapter-title::after {
+            content: '❦';
+            display: block;
+            color: var(--persian-gold);
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .opening-quote {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--dark-brown);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .opening-quote::before {
+            content: '«';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.5);
+        }
+
+        .opening-quote::after {
+            content: '»';
+            position: absolute;
+            bottom: -30px;
+            left: 10px;
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.5);
+        }
+
+        .content-paragraph {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 1rem;
+        }
+
+        .highlight-text {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Reading Progress */
+        .reading-progress {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 10px;
+            border-right: 4px solid var(--mountain-blue);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-text {
+            color: var(--mountain-blue);
+            font-weight: 600;
+        }
+
+        .progress-bar-container {
+            background: rgba(37, 99, 235, 0.2);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--mountain-blue), var(--persian-gold));
+            border-radius: 5px;
+            width: 0%;
+            transition: width 2s ease;
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Paywall Design */
+        .paywall-trigger {
+            position: relative;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+            border: 2px dashed var(--persian-gold);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .paywall-trigger:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .paywall-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .paywall-title {
+            font-size: 2rem;
+            color: var(--dark-brown);
+            margin-bottom: 1rem;
+        }
+
+        .paywall-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--mountain-blue) 100%);
+            padding: 4rem 0;
+            color: white;
+            margin: 4rem 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .stats-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            display: block;
+            color: var(--persian-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .book-3d {
+                width: 250px;
+                height: 350px;
+            }
+
+            .book-title {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo-symbol">📚</div>
+                <div class="logo-text">
+                    <h1>انجمن خردمندان</h1>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#book">کتاب</a></li>
+                    <li><a href="#preview">پیش‌نمایش</a></li>
+                    <li><a href="#author">نویسنده</a></li>
+                    <li><a href="#community">انجمن</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="book">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>از کابل تا کجا؟</h1>
+                <p class="hero-subtitle">سفر یک جوان افغان از کابل تا فنلند و کشف بزرگ</p>
+                <p class="hero-description">
+                    کتابی که هر جوان افغان باید بخواند. داستان واقعی تغییر ذهنیت، غلبه بر محدودیت‌ها، 
+                    و کشف این حقیقت که موفقیت به مکان وابسته نیست، بلکه به ذهن.
+                </p>
+                
+                <div class="author-info">
+                    <h3>درباره نویسنده</h3>
+                    <p>نوشته توسط جوان افغانی که از کابل به فنلند مهاجرت کرد و کشف کرد که مشکل از مکان نیست، از ذهن است.</p>
+                </div>
+
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="startReading()">📖 شروع مطالعه رایگان</button>
+                    <button class="btn-secondary" onclick="scrollToPreview()">👁️ پیش‌نمایش کتاب</button>
+                </div>
+            </div>
+
+            <!-- 3D Book Display -->
+            <div class="book-showcase">
+                <div class="book-3d" onclick="startReading()">
+                    <div class="book-cover">
+                        <h2 class="book-title">از کابل تا کجا؟</h2>
+                        <p class="book-subtitle">سفر درونی یک جوان افغان</p>
+                        <div class="book-icon">🏔️</div>
+                        <p class="book-author">یک جوان افغان از فنلند</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Preview Section -->
+    <section class="preview-section" id="preview">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2>پیش‌نمایش کتاب</h2>
+                <p>فصل اول را به صورت کامل و رایگان بخوانید</p>
+            </div>
+
+            <!-- Actual Book Content -->
+            <div class="book-content">
+                <h1 class="chapter-title">پیشگفتار</h1>
+                
+                <div class="opening-quote">
+                    جغرافیا سرنوشت نیست، جوهر درونت سرنوشت‌ساز است
+                </div>
+
+                <p class="content-paragraph">به نام خداوند مهربان</p>
+                
+                <p class="content-paragraph">جوان عزیز افغان،</p>
+                
+                <p class="content-paragraph">
+                    این کتاب را از فنلند می‌نویسم. کشوری که چهار سال است در آن زندگی می‌کنم. اما داستان من از کابل شروع می‌شود، 
+                    جایی که مثل شما، روزی جوانی پر از رویا بودم که با واقعیت‌های تلخ دست و پنجه نرم می‌کردم.
+                </p>
+                
+                <p class="content-paragraph">
+                    می‌دانم که حالا، چه در کابل، چه در هرات، چه در مزار، یا حتی در گوشه‌ای از اروپا یا آمریکا، 
+                    این سوال در ذهنت می‌چرخد: <span class="highlight-text">«از اینجا به کجا؟»</span>
+                </p>
+
+                <div style="background: rgba(139, 69, 19, 0.1); padding: 2rem; border-radius: 10px; border-right: 4px solid var(--dark-brown); margin: 2rem 0;">
+                    <h3 style="color: var(--dark-brown); margin-bottom: 1rem;">داستانی که همه چیز را تغییر داد</h3>
+                    
+                    <p class="content-paragraph">
+                        سال ۱۳۹۸، در یکی از سردترین روزهای زمستان کابل، پسر جوانی به دفترم آمد. هجده ساله بود، 
+                        درست در همان سنی که انسان باید پر از امید باشد، اما چشمانش گویی صد سال زندگی کرده بود.
+                    </p>
+                    
+                    <p style="text-align: center; font-style: italic; color: var(--dark-brown); font-size: 1.2rem; margin: 2rem 0;">
+                        «استاد، من می‌خواهم تغییر کنم، اما نمی‌دانم از کجا شروع کنم. همه می‌گویند برو، فرار کن. 
+                        اما من می‌خواهم بمانم و بسازم. آیا دیوانه‌ام؟»
+                    </p>
+                    
+                    <p class="content-paragraph">
+                        در چشمان او، خودم را دیدم. همان سردرگمی، همان ترس، همان امید.
+                    </p>
+                </div>
+
+                <!-- Reading Progress -->
+                <div class="reading-progress">
+                    <div class="progress-header">
+                        <span class="progress-text">پیشرفت مطالعه</span>
+                        <span class="progress-text">۲۵٪ از پیشگفتار</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="readingProgress"></div>
+                    </div>
+                    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                        ۵ دقیقه مطالعه • ۱۰ دقیقه باقی‌مانده برای تکمیل پیشگفتار
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paywall -->
+            <div class="paywall-trigger" onclick="showPaywall()">
+                <div class="paywall-icon">🔓</div>
+                <h3 class="paywall-title">ادامه این سفر الهام‌بخش</h3>
+                <p class="paywall-description">
+                    شما تنها ۲۵٪ از پیشگفتار را خوانده‌اید. برای خواندن ادامه کتاب و کشف راز تغییر زندگی، 
+                    به انجمن خردمندان بپیوندید.
+                </p>
+                <button class="btn-primary">🚀 دسترسی کامل - $۹.۹۹/ماه</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <h2 class="stats-title">تأثیر کتاب "از کابل تا کجا؟"</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">۱۵,۰۰۰+</span>
+                    <span class="stat-label">جوان افغان خوانده‌اند</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">۹۵٪</span>
+                    <span class="stat-label">تغییر مثبت گزارش کرده‌اند</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">۴۲</span>
+                    <span class="stat-label">کشور جهان</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">۸۵٪</span>
+                    <span class="stat-label">به دیگران پیشنهاد کرده‌اند</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function startReading() {
+            // Simulate starting to read
+            const progressBar = document.getElementById('readingProgress');
+            progressBar.style.width = '25%';
+            
+            // Scroll to preview section
+            document.getElementById('preview').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            
+            // After some time, show paywall
+            setTimeout(() => {
+                progressBar.style.width = '45%';
+                setTimeout(showPaywall, 3000);
+            }, 2000);
+        }
+
+        function scrollToPreview() {
+            document.getElementById('preview').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function showPaywall() {
+            // Create paywall modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                direction: rtl;
+                font-family: 'Vazir', serif;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 4rem; border-radius: 25px; max-width: 600px; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.3); position: relative;">
+                    <div style="font-size: 4rem; margin-bottom: 1.5rem;">📖</div>
+                    <h3 style="font-size: 2.5rem; color: var(--dark-brown); margin-bottom: 1.5rem;">کشف ادامه سفر</h3>
+                    <p style="color: #666; margin-bottom: 2.5rem; line-height: 1.8; font-size: 1.2rem;">
+                        داستان واقعی تغییر از کابل تا فنلند ادامه دارد. بیاموزید که چگونه ذهنیت‌تان را تغییر دهید و 
+                        مستقل از مکانی که هستید، موفق شوید.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; justify-content: center;">
+                        <div style="padding: 1.5rem; border: 3px solid var(--persian-gold); border-radius: 20px; cursor: pointer; min-width: 150px; background: rgba(212, 175, 55, 0.1);">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--dark-brown);">$۹.۹۹</div>
+                            <div style="font-size: 1rem; color: #666;">ماهانه</div>
+                            <div style="font-size: 0.9rem; color: var(--persian-gold); margin-top: 0.5rem;">محبوب‌ترین</div>
+                        </div>
+                        <div style="padding: 1.5rem; border: 2px solid #e5e5e5; border-radius: 20px; cursor: pointer; min-width: 150px;">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--dark-brown);">$۹۹</div>
+                            <div style="font-size: 1rem; color: #666;">سالانه</div>
+                            <div style="font-size: 0.9rem; color: var(--afghan-green); margin-top: 0.5rem;">۲ ماه رایگان</div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: linear-gradient(135deg, var(--persian-gold), var(--sunset-orange)); color: white; border: none; padding: 1.25rem 3rem; border-radius: 50px; font-weight: 700; cursor: pointer; margin-left: 1rem; font-size: 1.2rem;">🚀 همین حالا شروع کنید</button>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: transparent; border: 2px solid #e5e5e5; color: var(--dark-brown); padding: 1.25rem 3rem; border-radius: 50px; font-weight: 600; cursor: pointer; font-size: 1.1rem;">بعداً</button>
+                    
+                    <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+                        ✓ دسترسی کامل به کتاب &nbsp;&nbsp; ✓ انجمن خوانندگان &nbsp;&nbsp; ✓ بروزرسانی‌های مداوم
+                    </p>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+
+        // Initialize reading progress animation
+        setTimeout(() => {
+            const progressBar = document.getElementById('readingProgress');
+            if (progressBar) {
+                progressBar.style.width = '25%';
+            }
+        }, 1500);
+
+        // Add scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Animate stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cultural-black: 0 0 0;
+    --cultural-red: 211 32 17;
+    --cultural-green: 0 122 54;
+    --cultural-gold: 212 175 55;
+    --warm-cream: 253 251 247;
+    --dark-brown: 139 69 19;
+    --mountain-blue: 37 99 235;
+    --sunset-orange: 234 88 12;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-cultural-cream to-[#f5f1e8] text-cultural-dark-brown;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* 3D Book Styles */
+  .book-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .book-3d:hover {
+    transform: rotateY(-15deg) rotateX(5deg);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-cultural-gold via-cultural-orange to-cultural-blue bg-clip-text text-transparent;
+  }
+
+  /* Progress Bar Animation */
+  .progress-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-cultural-gold to-cultural-orange text-white font-bold py-4 px-8 rounded-full;
+    @apply hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
+    @apply shadow-lg shadow-cultural-gold/30;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-cultural-brown border-2 border-cultural-brown font-semibold py-4 px-8 rounded-full;
+    @apply hover:bg-cultural-brown hover:text-white transition-all duration-300;
+  }
+
+  /* Cultural Pattern Background */
+  .cultural-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Flag Colors Bar */
+  .flag-colors-bar {
+    background: linear-gradient(90deg, 
+      var(--cultural-black) 33.33%, 
+      var(--cultural-red) 33.33%, 
+      var(--cultural-red) 66.66%, 
+      var(--cultural-green) 66.66%
+    );
+    height: 4px;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cultural-cream;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cultural-gold to-cultural-orange rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-cultural-orange to-cultural-red;
+  }
+
+  /* Text Selection */
+  ::selection {
+    @apply bg-cultural-gold/30 text-cultural-brown;
+  }
+
+  ::-moz-selection {
+    @apply bg-cultural-gold/30 text-cultural-brown;
+  }
+}
